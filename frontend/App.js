@@ -7,7 +7,7 @@ export default function App() {
   const [message, setMessage] = React.useState('');
 
   useEffect(() => {
-  axios.get('http://10.0.2.2:5000/')
+  axios.get('http://10.0.2.2:5000/') //ip to be used if using the emulator like android studio, else you might need to get your PC's IP address
     .then(response => {
       console.log('Response from Flask:', response.data);
       setMessage(response.data.message); // access the message string
@@ -25,11 +25,11 @@ export default function App() {
   return(<Homescreen/>)
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white'
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: 'white'
+//   },
+// });
