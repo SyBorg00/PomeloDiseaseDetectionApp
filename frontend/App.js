@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
-import Homescreen from "./screens/Homescreen";
+import Homescreen from "./screens/HomeScreen";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default function App() {
   const [message, setMessage] = React.useState('');
 
+  //not in use yet
   useEffect(() => {
   axios.get('http://10.0.2.2:5000/') //ip to be used if using the emulator like android studio, else you might need to get your PC's IP address
     .then(response => {
@@ -17,19 +19,5 @@ export default function App() {
     });
 }, []);
 
-  // return (
-  //   <View style={styles.container}>
-  //     <Text>{message}</Text>
-  //   </View>
-  // );
-  return(<Homescreen/>)
+  return(<AppNavigator/>)
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: 'white'
-//   },
-// });

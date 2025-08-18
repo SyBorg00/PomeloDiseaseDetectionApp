@@ -1,35 +1,30 @@
 import React from 'react';
-import {createStaticNavigation, NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../screens/HomeScreen';
-import ResultScreen from "../screens/ResultScreen";
-import ScannerScreen from "../screens/ScannerScreen";
+import HomeScreen from "../screens/HomeScreen";
+import ResultScreen from '../screens/ResultScreen';
+import ScannerScreen from '../screens/ScannerScreen';
 
-const Stack = createNativeStackNavigator({
-    screens:{
-        Home:{
-            screen: HomeScreen,
-            options: {title: 'Home'}
-        },
-        Scanner:{
-            screen: ScannerScreen,
-        },
-        Result:{
-            screen: ResultScreen,
-        }
-    }
-});
-
-const Navigation = createStaticNavigation(Stack)
+const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'My Home Screen' }}
+          options={{ title: 'Home' }}
+        />
+        <Stack.Screen
+          name="Scanner"
+          component={ScannerScreen}
+          options={{ title: 'Scanner' }}
+        />
+        <Stack.Screen
+          name="Result"
+          component={ResultScreen}
+          options={{ title: 'Result' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
