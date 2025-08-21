@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
@@ -8,7 +8,10 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>Logo should be here</Text>
+
+      <Image source={require('../assets/pomelo logo.png')}/>
+      <Text style={styles.title}>Pomelo</Text>
+      <Text style={styles.text}>Disease Detection</Text>
 
       <Button
         mode="contained"
@@ -21,6 +24,8 @@ const HomeScreen = () => {
   );
 };
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -30,11 +35,20 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    fontSize: 20,
+    width: '100px',
+    height: '100px',
     marginBottom: 20,
+  },
+  title:{
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  text:{
+    fontSize: 14
   },
   button: {
     marginVertical: 10,
+    backgroundColor: "green",
   },
   note: {
     fontSize: 12,

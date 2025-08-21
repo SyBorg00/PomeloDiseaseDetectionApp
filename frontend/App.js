@@ -7,7 +7,7 @@ import AppNavigator from "./navigation/AppNavigator";
 export default function App() {
   const [message, setMessage] = React.useState('');
 
-  //not in use yet
+  //not in use yetr
   useEffect(() => {
   axios.get('http://10.0.2.2:5000/') //ip to be used if using the emulator like android studio, else you might need to get your PC's IP address
     .then(response => {

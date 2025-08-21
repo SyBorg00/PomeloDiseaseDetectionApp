@@ -14,7 +14,6 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Home' }}
         />
         <Stack.Screen
           name="Scanner"
