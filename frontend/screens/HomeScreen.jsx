@@ -9,10 +9,9 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
 
-      <Image source={require('../assets/pomelo logo.png')}/>
+      <Image source={require('../assets/pomelo logo.png')} style={styles.logo}/>
       <Text style={styles.title}>Pomelo</Text>
       <Text style={styles.text}>Disease Detection</Text>
-
       <Button
         mode="contained"
         onPress={() => navigation.navigate('Scanner')}
@@ -35,16 +34,16 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   logo: {
-    width: '100px',
-    height: '100px',
-    marginBottom: 20,
+    width: 250,
+    height: 250,
   },
   title:{
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   text:{
-    fontSize: 14
+    fontSize: 14,
+    marginBottom: 25
   },
   button: {
     marginVertical: 10,

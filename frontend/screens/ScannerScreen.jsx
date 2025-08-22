@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import {IconButton} from "react-native-paper";
 
 export default function ScannerScreen({ navigation }) {
   const [permission, requestPermission] = useCameraPermissions();
@@ -31,7 +32,12 @@ export default function ScannerScreen({ navigation }) {
     <View style={styles.container}>
       <CameraView ref={cameraRef} style={styles.camera} facing="back" />
       <View style={styles.buttonContainer}>
-        <Button title="Capture" onPress={takePicture} />
+        <IconButton
+            icon="camera"
+            containerColor="green"
+            iconColor="white"
+            size={45}
+            onPress={takePicture} />
       </View>
     </View>
   );
@@ -42,7 +48,7 @@ const styles = StyleSheet.create({
   camera: { flex: 1 },
   buttonContainer: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 40,
     alignSelf: 'center',
   },
 });
