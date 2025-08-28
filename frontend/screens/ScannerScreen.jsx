@@ -5,6 +5,7 @@ import {IconButton} from "react-native-paper";
 
 export default function ScannerScreen({ navigation }) {
   const [permission, requestPermission] = useCameraPermissions();
+  const [cameraFacing, setCameraFacing] = React.useState("back");
   const cameraRef = useRef(null);
 
   if (!permission) {
@@ -28,9 +29,13 @@ export default function ScannerScreen({ navigation }) {
     }
   };
 
+  const handleCameraSwitching = () => {
+    setCameraFacing(() => setCameraFacing(cameraFacing !== "front" ? "front": "back"));
+  }
+
   return (
     <View style={styles.container}>
-      <CameraView ref={cameraRef} style={styles.camera} facing="back" />
+      <CameraView ref={cameraRef} style={styles.camera} facing= cameraFacing />
       <View style={styles.buttonContainer}>
         <IconButton
             icon="camera"
@@ -38,6 +43,12 @@ export default function ScannerScreen({ navigation }) {
             iconColor="white"
             size={45}
             onPress={takePicture} />
+        <IconButton
+            icon="camera-switch"
+            iconColor="white"
+            size={20}
+            onPress={() => { handleCameraSwitching }}
+        />
       </View>
     </View>
   );
