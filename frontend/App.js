@@ -3,6 +3,8 @@ import { View, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
 import Homescreen from "./screens/HomeScreen";
 import AppNavigator from "./navigation/AppNavigator";
+import { PaperProvider } from 'react-native-paper';
+import { theme } from './theme/theme'
 
 export default function App() {
   const [message, setMessage] = React.useState('');
@@ -19,5 +21,9 @@ export default function App() {
 //     });
 // }, []);
 
-  return(<AppNavigator/>)
+  return(
+    <PaperProvider theme={theme}>
+      <AppNavigator/>
+    </PaperProvider>
+  )
 }

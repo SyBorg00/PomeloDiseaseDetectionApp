@@ -2,28 +2,39 @@ import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import Layout from '../components/Layout';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
+  // return (
+  //   <View style={styles.container}>
+  //     <Text style={styles.title}>Pomelo</Text>
+  //     <Text style={styles.text}>Disease Detection</Text>
+  //     <Button
+  //       mode="contained"
+  //       onPress={() => navigation.navigate('Scanner')}
+  //       style={styles.button}
+  //     >
+  //       Start Scanning
+  //     </Button>
+  //   </View>
+  // );
   return (
-    <View style={styles.container}>
-
-      <Image source={require('../assets/pomelo logo.png')} style={styles.logo}/>
-      <Text style={styles.title}>Pomelo</Text>
-      <Text style={styles.text}>Disease Detection</Text>
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('Scanner')}
-        style={styles.button}
-      >
-        Start Scanning
-      </Button>
-    </View>
+    <Layout>
+      <Text>Scan Your Pomelo</Text>
+      <View style={{backgroundColor: "#cfcfcfff"}}>
+        <Button mode='contained'>Open Your Camera</Button>
+        <Text>or</Text>
+        <Button mode='contained'>Open From Gallery</Button>
+      </View>
+      <Text>From Previous Results</Text>
+      <View style={{backgroundColor: "#cfcfcfff"}}>
+        <Text>Currently no results</Text>
+      </View>
+    </Layout>
   );
 };
-
-
 
 const styles = StyleSheet.create({
   container: {

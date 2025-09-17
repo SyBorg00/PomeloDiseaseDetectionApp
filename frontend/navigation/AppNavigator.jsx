@@ -4,13 +4,18 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screens/HomeScreen";
 import ResultScreen from '../screens/ResultScreen';
 import ScannerScreen from '../screens/ScannerScreen';
+import OpeningScreen from '../screens/OpeningScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Opening" screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name="Opening"
+          component={OpeningScreen}
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
