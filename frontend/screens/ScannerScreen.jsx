@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   camera: { flex: 1 },
   buttonContainer: {
+    flexDirection: 'row',
     position: 'absolute',
     bottom: 40,
     alignSelf: 'center',
